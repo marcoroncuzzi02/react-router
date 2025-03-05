@@ -2,14 +2,22 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 function SinglePost() {
-    const [singlePost, setSinglePost] = useState(null)
+    const [singlePost, setSinglePost] = useState({
+        id : '',
+        title : '',
+        content : '',
+        image : '',
+        tags : []  
+    })
     const { id } = useParams();
 
+    const url = import.meta.env.VITE_ENDPOINT_URL;
+
      useEffect(() => {
-        fetch(`http://localhost:3000/api/posts/${id}`)
+        fetch(url + '/' + id)
             .then((res) => res.json())
             .then((data) => {
-                console.err(data);
+                console.log(data);
                 setSinglePost(data);
                 })
             .catch((error) => console.error(error));

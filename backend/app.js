@@ -4,6 +4,12 @@ const port = 3000
 const postRouter = require('./routers/postRouter');
 const endPointMiddleware = require('./middlewares/endPointMiddleware')
 const errorHandler = require('./middlewares/errorHandler')
+const cors = require("cors");
+
+app.use(cors());
+// app.use(cors({
+//     origin: "http://localhost:5173"
+//   }));
 
 app.use(express.static('./public/imgs'));
 
