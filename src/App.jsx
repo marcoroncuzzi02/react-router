@@ -4,6 +4,7 @@ import HomePage from "../pages/HomePage";
 import ContactPage from "../pages/ContactPage";
 import AboutPage from "../pages/AboutPage.jsx";
 import PostsPage from "../pages/PostsPage";
+import SinglePost from "../pages/SinglePost";
 import DefaultLayout from "../layouts/DefaultLayout.jsx";
 
 
@@ -18,6 +19,7 @@ function App() {
             <Route path="/content" Component={ContactPage} />
             <Route path="/about" Component={AboutPage} />
             <Route path="/posts" Component={PostsPage} />
+            <Route path="/posts/:id" Component={SinglePost} />
           </Route>
         </Routes>
       </BrowserRouter>
